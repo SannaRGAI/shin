@@ -14,7 +14,7 @@ bot = TeleBot(token)
 @bot.message_handler(['start'])
 def start_message(message: Message):
     with open('greeting.html','r') as file:
-        bot.send_message(message.chat.id, file.read(),reply_markup=keyboard)
+        bot.send_message(message.chat.id, file.read(),reply_markup=keyboard ,parse_mode='HTML')
 
 
 @bot.message_handler(func=lambda message:message.text=='О враче')
